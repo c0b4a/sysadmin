@@ -28,3 +28,188 @@ View motherboard information
 View CMD history
   CMD
     - doskey /history
+
+Network status
+  CMD
+    - ipconfig /all
+    - ipconfig /flushdns
+    - ipconfig /release (release ipv4 from dhcp)
+    - ipconfig /release6 (release ipv6 from dhcp)
+    - ipconfig /displaydns
+    - ipconfig /registerdns
+    - ping [ip]
+    - ping -l [packetsize] [ip]
+    - ping -a [ip] (continuous ping)
+
+Check windows integrity
+  CMD
+    - sfc /scannow
+
+Check disk & partitions
+  CMD
+    - chkdisk [/F fix][/R fix & repair bad sectors][/scan online check][/X force dismount]
+
+Latency & connectivity issues(good for multiple routers or vpn)
+  CMD
+    - tracert [ip]
+
+View driver information
+  CMD
+    - driverquery
+
+General system information
+  CMD
+    - systeminfo
+    - systeminfo /s [pcname] (run remotely)
+
+Power settings & config
+  CMD
+    - powercfg /list
+
+View incoming and outgoing connections
+  CMD
+    - netstat [-a active and listening ports][-n in numerical order][-e stats][-ab exe info][-abo associates pid]
+    - netstat [-r routing table][-af fqdn]
+Task manager/process manager(best for remote viewing)
+  CMD
+    - tasklist
+    - taskkill /pid [pid] /f
+
+Find MAC address
+  CMD
+    - getmac
+    - getmac /s [pcname] (remotely)
+
+Shutdown/restart/hibernate
+  CMD
+    - shutdown [/s][/r][/h][/soft][/f force][/t [time]][/a abort]
+    - shutdown [/d] (displays shutdown logs and reason for last shutdown)
+    - shutdown /l /m \\pc2 /t 0 (log user off remote pc)
+    - shutdown /m \\pc2 /c "Rebooting, have a nice day" (leaves message when shutdown occurs)
+  PS
+    - Stop-Computer
+    - Restart-Computer
+
+Copy
+  CMD
+    - robocopy [source] [destination] [file]
+    - xcopy [sourcepath] [desination]
+
+Delete
+  CMD
+    - del [path]
+
+Format volume
+  CMD
+    - format D: /fs:NTFS
+
+View hostname
+  CMD
+    - hostname
+
+Output to text file
+  CMD
+    - command -t > c:\it\test-file.txt
+
+Find DNS records
+  CMD
+    - nslookup (follow with domain)
+
+Group policy
+  CMD
+    - gpupdate (updates gp without reboot)
+    - gpresult /r (shows computer/user gp)
+    - gpresult /r /scope:[user/conpute/pcname] (specifies and can be used remotely)
+    - gpresult /h c:\it\report.html (generates as html report)
+    - gpresult /r> c:\it\report.txt (generates as txt report)
+
+Clear cmds
+  CMD
+    - cls
+  UNIX
+    - clear
+
+Test domain controller
+  CMD
+    - dcdiag [/s:DC1 specify which controller to test]
+
+Start and stop windows services
+  CMD
+    - net stop [service]
+    - net start [service]
+
+User info
+  CMD
+    - whoami (display logged on user)
+    - whoami /groups (shows user groups)
+    - whoami /upn (shows username in UPN format)
+    - whoami /user (shows username and SID)
+    - whoami /all (all user info)
+
+Network user information
+  CMD
+    - net user (computer account info)
+    - net user /domain (all user accounts on domain controller)
+    - net user [username] /domain (domain account info)
+    
+Telnet client(attempts connection to port)
+  CMD
+    - telnet [server] [port]
+
+System enviornment variables
+  CMD
+    - set
+    - set [filter]
+  UNIX
+    - path
+
+Connect to network resources(net drives)
+  CMD
+    - net use \\server\share
+    - net use D: \\server\share
+    - net use (displays options as list)
+    - net use D: /delete (remove resource)
+
+Local routing table
+  CMD
+    - route print
+
+File association(add new extension equivalents)
+  CMD
+    - assoc .png=pngfile (.pngfile is now handled as png)
+
+Cipher (encyption)
+  CMD
+    - cipher /w:c:\it\private (cleans path irreversibly)
+
+Run commands remotely w/o connection
+  CMD
+    - psexec \\remotepc ipconfig
+
+Directory
+  CMD
+    - dir
+    - mkdir/rmdir
+
+Run as user
+  CMD
+    - runas /user:administator [path]
+
+Install MSI
+  CMD
+    - msiexec /i [path]
+    - msiexec /i [path] /quit (no interation)
+
+Manage bitlocker
+  CMD
+    - manage-bde -status (check status)
+    - manage-bde -on (turns BL on)
+
+Find string in file
+  CMD
+    - findstr food [filepath]
+
+Connect remotely
+  CMD
+    - mstsc /f [ip] (f is for fullscreen)
+    - mstsc /span [ip] (across multiple monitors)
