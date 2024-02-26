@@ -1,0 +1,30 @@
+View memory information
+  CMD
+    - wmic memorychip list full
+    - wmic memorychip get devicelocator, memorytype, formfactor, caption, speed, desciption, manufacturer, partnumber etc
+  Linux
+    - 
+
+View CPU information
+  CMD
+    - wmic cpu list full
+    - wmic cpi get caption, cpustatus, name, socketdesignation, processorId(serial) etc
+
+View computer information
+  CMD
+    - wmic bios list full
+    - wmic bios get serialnumber
+
+View diskdrive information
+  CMD
+    - wmic diskdrive list full
+    - wmic diskdrive get serialnumber
+
+View motherboard information
+  CMD
+    - wmic baseboard list full
+    - wmic baseboard get serialNumber
+
+View CMD history
+  CMD
+    - doskey /history
