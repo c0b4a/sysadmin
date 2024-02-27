@@ -138,7 +138,7 @@ Start and stop windows services
     - net stop [service]
     - net start [service]
 
-User info
+User info via whoami(Doesn't contact domain server)
   CMD
     - whoami (display logged on user)
     - whoami /groups (shows user groups)
